@@ -9,11 +9,14 @@ import lombok.Setter;
 @Setter
 public class SaludoResponse {
 	
+	private Long id;
+	
 	private String saludo;
 	
 	private String tipo;
 	
 	public SaludoResponse(Saludo saludo) {
+		this.id = saludo.getId();
 		this.saludo = saludo.getSaludo();
 		this.tipo = saludo.getTipo();
 	}
