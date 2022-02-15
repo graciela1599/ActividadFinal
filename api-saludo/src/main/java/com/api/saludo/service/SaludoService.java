@@ -21,10 +21,14 @@ public class SaludoService {
 		try {
 			saludo = saludoRepository.save(saludo);
 		}catch(Exception e) {
-			throw new SaludoExistenteException(saludo);
+			throw new SaludoExistenteException(createSaludoRequest);
 		}
 		
 		
 		return saludo;
+	}
+	
+	public Saludo getSaludoPorTipo(String tipo) {
+		return saludoRepository.findByTipo(tipo);
 	}
 }
