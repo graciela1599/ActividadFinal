@@ -38,7 +38,7 @@ public class SaludoService {
 			return "dia";
 
 			
-		if(hora_actual >= 12 && hora_actual <= 6 ) 
+		if(hora_actual >= 12 && hora_actual <= 18 ) 
 			return "tarde";
 			
 				
