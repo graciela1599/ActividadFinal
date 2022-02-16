@@ -1,14 +1,32 @@
 # ActividadFinal
-saludos-api y persona-api
+saludos-api y api-personas
 
 
-POSTGRESQL
+                    POSTGRESQL
+                    saludo
 -----------------------------------------------------
 
         = = = = = SALUDOS-API = = = = = 
 
 /create
 
-/get/{tipo}
+get/tipo/{tipo}
 
 -----------------------------------------------------
+
+                    POSTGRESQL
+                    empresa
+-----------------------------------------------------
+
+
+        = = = = = API-PERSONAS = = = = = 
+
+/create
+
+/getAll
+
+/get/nombre/{nombre}
+
+
+
+----------------------------------------------------
