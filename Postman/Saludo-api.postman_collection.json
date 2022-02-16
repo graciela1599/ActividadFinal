@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "4eeb9cf9-6ed4-4807-af3b-83414f4427eb",
+		"name": "Saludo-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/api/saludo/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"saludo\": \"Hola, buenas noches\",\r\n    \"tipo\": \"s\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/saludo/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"saludo",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/saludo/get/tipo/dia",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/saludo/get/tipo/dia",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"saludo",
+						"get",
+						"tipo",
+						"dia"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
