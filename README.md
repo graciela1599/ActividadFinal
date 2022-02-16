@@ -6,7 +6,7 @@ saludos-api y api-personas
                     saludo
 -----------------------------------------------------
 
-        = = = = = SALUDOS-API = = = = = 
+  = = = = = SALUDOS-API = = = = = 
 
 /create
 
@@ -14,12 +14,12 @@ get/tipo/{tipo}
 
 -----------------------------------------------------
 
-                    POSTGRESQL
-                    empresa
+      POSTGRESQL
+       empresa
 -----------------------------------------------------
 
 
-        = = = = = API-PERSONAS = = = = = 
+ = = = = = API-PERSONAS = = = = = 
 
 /create
 
