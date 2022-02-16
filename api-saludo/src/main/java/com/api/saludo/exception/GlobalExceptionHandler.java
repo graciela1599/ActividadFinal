@@ -10,13 +10,15 @@ import org.springframework.web.context.request.WebRequest;
 public class GlobalExceptionHandler {
 
 	@ExceptionHandler(SaludoExistenteException.class)
-	public ResponseEntity<ErrorDetails> handleResourceNotFoundException(SaludoExistenteException exception,
-			WebRequest webrequest) {
-		ErrorDetails errorDetails = new ErrorDetails(900, exception.getMessage(), exception.getSaludo(),
+
+	public ResponseEntity<ErrorDetails> handleResourceSaludoExistente(SaludoExistenteException exception,
+																		WebRequest webrequest) {
+		ErrorDetails errorDetails = new ErrorDetails(900, exception.getMessage(), exception.getSaludo() ,
 				webrequest.getDescription(false));
 
 		return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
 	}
+
 
 	@ExceptionHandler(OnlyThreeValueException.class)
 	public ResponseEntity<ErrorDetails> handleResourceNotFoundException(OnlyThreeValueException exception,
@@ -26,5 +28,6 @@ public class GlobalExceptionHandler {
 
 		return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
 	}
+
 
 }

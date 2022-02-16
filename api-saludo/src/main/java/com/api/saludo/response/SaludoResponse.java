@@ -9,16 +9,19 @@ import lombok.Setter;
 @Setter
 public class SaludoResponse {
 	
-	private Long id;
 	
-	private String saludo;
+	private Long id = 0l;
 	
-	private String tipo;
+	private String saludo = " No hay saludo";
+	
+	private String tipo = "no hay";
 	
 	public SaludoResponse(Saludo saludo) {
-		this.id = saludo.getId();
-		this.saludo = saludo.getSaludo();
-		this.tipo = saludo.getTipo();
+		if(saludo != null) {
+			this.id = saludo.getId();
+			this.saludo = saludo.getSaludo();
+			this.tipo = saludo.getTipo();
+		}
 	}
 
 }
