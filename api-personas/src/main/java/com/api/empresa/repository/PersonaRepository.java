@@ -8,4 +8,5 @@ import com.api.empresa.entity.Persona;
 @Repository
 public interface PersonaRepository extends JpaRepository<Persona, Long>{
 
+	Persona findByNombre(String nombre);
 }

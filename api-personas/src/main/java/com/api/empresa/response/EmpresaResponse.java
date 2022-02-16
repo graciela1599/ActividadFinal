@@ -13,6 +13,8 @@ public class EmpresaResponse {
 	
 	private String direccion;
 	
+
+	
 	public EmpresaResponse(Empresa empresa) {
 		this.nombre = empresa.getNombre();
 		

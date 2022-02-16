@@ -13,6 +13,7 @@ public class PersonaResponse {
 	private Long id;
 	
 	private String nombre;
+	
 	private String direccion;
 	
 	private Integer edad;
@@ -24,7 +25,7 @@ public class PersonaResponse {
 		this.id = persona.getId();
 		this.nombre = persona.getNombre();
 		this.direccion = persona.getDireccion();
-		
+		this.edad = persona.getEdad();
 		this.empresa = new EmpresaResponse(persona.getEmpresa());
 		
 	}

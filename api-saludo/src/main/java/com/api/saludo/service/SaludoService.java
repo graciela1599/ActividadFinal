@@ -29,6 +29,9 @@ public class SaludoService {
 	}
 	
 	public Saludo getSaludoPorTipo(String tipo) {
-		return saludoRepository.findByTipo(tipo);
+		
+		Saludo saludo = new Saludo();
+		saludo = saludoRepository.findByTipo(tipo);
+		return saludo;
 	}
 }

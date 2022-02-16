@@ -1,6 +1,7 @@
 package com.api.empresa.entity;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,13 +10,17 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
+
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
 @Entity
 @Table(name = "personas")
+
 public class Persona {
 	
 	@Id
@@ -24,6 +29,8 @@ public class Persona {
 	
 	private String nombre;
 	
+	@Column(columnDefinition = "BIGINT", name="edad")
+	@Type(Integer.class)
 	private Integer edad;
 	
 	private String direccion;
@@ -32,5 +39,7 @@ public class Persona {
 	@JoinColumn(name = "empresa_id")
 	private Empresa empresa;
 	
+	
+
 
 }

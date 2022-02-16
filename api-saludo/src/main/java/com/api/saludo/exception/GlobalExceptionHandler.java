@@ -17,7 +17,7 @@ import org.springframework.web.context.request.WebRequest;
 public class GlobalExceptionHandler {
 
 	@ExceptionHandler(SaludoExistenteException.class)
-	public ResponseEntity<ErrorDetails> handleResourceNotFoundException(SaludoExistenteException exception,
+	public ResponseEntity<ErrorDetails> handleResourceSaludoExistente(SaludoExistenteException exception,
 																		WebRequest webrequest) {
 		ErrorDetails errorDetails = new ErrorDetails(900, exception.getMessage(), exception.getSaludo() ,
 				webrequest.getDescription(false));
@@ -25,4 +25,6 @@ public class GlobalExceptionHandler {
 	
 		return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
 	}
+	
+	
 }

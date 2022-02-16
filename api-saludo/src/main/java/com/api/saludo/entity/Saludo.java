@@ -24,13 +24,13 @@ public class Saludo {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long id=0L;
 	
 	@Column(name = "saludo")
-	private String saludo;
+	private String saludo="Saludo generico: hola";
 	
 	@Column(name = "tipo", unique = true)
-	private String tipo;
+	private String tipo ="no hay";
 	
 	public Saludo(CreateSaludoRequest createSaludoRequest) {
 		this.saludo = createSaludoRequest.getSaludo();
