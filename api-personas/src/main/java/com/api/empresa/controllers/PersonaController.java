@@ -34,7 +34,7 @@ public class PersonaController {
 		return personaService.getAll().stream().map(PersonaResponse::new).toList();
 	}
 	
-	@GetMapping("get/{nombre}")
+	@GetMapping("get/nombre/{nombre}")
 	public PersonaResponse getPersonaByNombre(@PathVariable("nombre") String nombre) {
 		return new PersonaResponse(personaService.getPersonaByNombre(nombre));
 	}
