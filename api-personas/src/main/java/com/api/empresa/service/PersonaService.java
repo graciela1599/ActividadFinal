@@ -15,7 +15,7 @@ import com.api.empresa.repository.PersonaRepository;
 import com.api.empresa.request.EmpresaRequest;
 import com.api.empresa.request.PersonaRequest;
 import com.api.empresa.response.PersonaResponse;
-import com.api.empresa.response.Response;
+import com.api.empresa.response.CreatePersonaResponse;
 
 @Service
 public class PersonaService {
@@ -29,9 +29,9 @@ public class PersonaService {
 	@Autowired
 	SaludoService saludoService;
 
-	public Response createPersona(PersonaRequest personaRequest) {
+	public CreatePersonaResponse createPersona(PersonaRequest personaRequest) {
 		Persona persona = new Persona();
-		Response response = new Response();
+		CreatePersonaResponse response = new CreatePersonaResponse();
 
 		persona.setNombre(personaRequest.getNombre());
 		persona.setDireccion(personaRequest.getDireccion());

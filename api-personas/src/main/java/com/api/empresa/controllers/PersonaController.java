@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.api.empresa.request.PersonaRequest;
 import com.api.empresa.response.PersonaResponse;
-import com.api.empresa.response.Response;
+import com.api.empresa.response.CreatePersonaResponse;
 import com.api.empresa.service.PersonaService;
 
 @RestController
@@ -25,7 +25,7 @@ public class PersonaController {
 	PersonaService personaService;
 	
 	@PostMapping("create")
-	public Response createPersona(@Valid @RequestBody PersonaRequest persona) {
+	public CreatePersonaResponse createPersona(@Valid @RequestBody PersonaRequest persona) {
 		return personaService.createPersona(persona);
 	}
 	

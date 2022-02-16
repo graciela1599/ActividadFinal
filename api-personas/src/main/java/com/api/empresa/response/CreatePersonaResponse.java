@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Response {
+public class CreatePersonaResponse {
 	
 	private String saludo; 
 	
