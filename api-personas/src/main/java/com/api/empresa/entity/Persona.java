@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 
@@ -37,6 +38,7 @@ public class Persona {
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "empresa_id")
+	
 	private Empresa empresa;
 	
 	

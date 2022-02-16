@@ -32,5 +32,13 @@ public class GlobalExceptionHandler {
 
 		return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
 	}
+	
+	@ExceptionHandler(EmpresaReferenciaNullException.class)
+	public ResponseEntity<ErrorDetails> handleResourceEmpresaReferenciaNullException(EmpresaReferenciaNullException exception,
+			WebRequest webrequest) {
+		ErrorDetails errorDetails = new ErrorDetails(exception.getCod(), exception.getMessage());
+
+		return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
+	}
 
 }

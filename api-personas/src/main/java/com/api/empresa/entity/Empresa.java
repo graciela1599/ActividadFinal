@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import com.api.empresa.request.EmpresaRequest;
 
@@ -31,5 +32,6 @@ public class Empresa {
 	private String direccion;
 
 	@OneToMany(mappedBy = "empresa",cascade = CascadeType.ALL, orphanRemoval = true)
+	
 	private List<Persona> trabajadores;
 }
