@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.api.saludo.entity.Saludo;
+import com.api.saludo.exception.OnlyThreeValueException;
 import com.api.saludo.exception.SaludoExistenteException;
 import com.api.saludo.repository.SaludoRepository;
 import com.api.saludo.request.CreateSaludoRequest;
@@ -21,6 +22,10 @@ public class SaludoService {
 		try {
 			saludo = saludoRepository.save(saludo);
 		}catch(Exception e) {
+			
+			if(e.getMessage().contains("only_three_values"))
+				throw new OnlyThreeValueException(createSaludoRequest);
+			
 			throw new SaludoExistenteException(createSaludoRequest);
 		}
 		
