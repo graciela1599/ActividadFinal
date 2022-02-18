@@ -4,9 +4,11 @@ import com.api.empresa.entity.Empresa;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
+@ToString
 public class EmpresaResponse {
 	
 	private String nombre;

@@ -1,7 +1,12 @@
 package com.api.saludo.controller;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +25,8 @@ import com.api.saludo.service.SaludoService;
 @RequestMapping("/api/saludo/")
 public class SaludoController {
 	
+	Logger logger = LoggerFactory.getLogger(SaludoController.class);
+	
 	@Autowired
 	SaludoService saludoService;
 	
@@ -34,7 +41,14 @@ public class SaludoController {
 	
 	@PostMapping("create")
 	public SaludoResponse createSaludo(@Valid @RequestBody CreateSaludoRequest createSaludoRequest) {
-		return new SaludoResponse(saludoService.createSaludo(createSaludoRequest));
+		SaludoResponse saludo = new SaludoResponse(saludoService.createSaludo(createSaludoRequest));
+		logger.info(" The record: " + saludo.toString() + " has been created. At " + LocalDateTime.now());
+		return saludo;
+	}
+	
+	@GetMapping("getAll")
+	public List<SaludoResponse> getAllSaludo(){
+		return saludoService.getAll().stream().map(SaludoResponse::new).toList();
 	}
 	
 

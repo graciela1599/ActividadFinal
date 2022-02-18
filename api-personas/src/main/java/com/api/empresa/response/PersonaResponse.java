@@ -4,10 +4,11 @@ import com.api.empresa.entity.Persona;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
-
+@ToString
 public class PersonaResponse {
 	
 	private Long id;

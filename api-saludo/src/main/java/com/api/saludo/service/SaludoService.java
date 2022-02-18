@@ -1,5 +1,7 @@
 package com.api.saludo.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -38,5 +40,8 @@ public class SaludoService {
 		Saludo saludo = new Saludo();
 		saludo = saludoRepository.findByTipo(tipo);
 		return saludo;
+	}
+	public List<Saludo> getAll(){
+		return saludoRepository.findAll();
 	}
 }
